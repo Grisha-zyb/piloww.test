@@ -18,6 +18,11 @@ class ImageEditor():
         self.changed.append(bw_image)
         bw_image.show()
 
+    def cont(self):
+        contoured = self.original.filter(ImageFilter.CONTOUR)
+        self.changed.append(contoured)
+        contoured.show()
+    
     def do_left(self):
         rotated = self.original.transpose(Image.FLIP_LEFT_RIGHT)
         self.changed.append(rotated)
